@@ -1,0 +1,15 @@
+USE [DesignFinal]
+GO
+/****** Object:  StoredProcedure [dbo].[GetAllStudents]    Script Date: 5/15/2016 12:59:20 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER PROCEDURE [dbo].[GetAllStudents] 
+	AS
+BEGIN
+	
+	SET NOCOUNT ON;
+	Select * from Student order by Last_Name, First_Name, Middle_Initial asc
+END

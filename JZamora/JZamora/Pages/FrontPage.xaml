@@ -1,0 +1,738 @@
+﻿<Page x:Class="JZamora.FrontPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="2000" d:DesignWidth="860"
+	Title="FrontPage">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top" Background="#FFD6DBE9">
+            <MenuItem Header="File" Height="28">
+                <MenuItem Name="mitm_new" Header="New" Height="28"/>
+                <MenuItem Name="mitm_open" Header="Open..." Height="28" Click="mitm_open_Click"/>
+                <Separator/>
+                <MenuItem Name="mitm_upload" Header="Upload Old T.O.R." Height="28" Click="mitm_upload_Click"/>
+                <Separator/>
+                <MenuItem x:Name="mitm_print" Header="Print" BorderThickness="1" IsEnabled="False"/>
+            </MenuItem>
+                <MenuItem Name="Next" Header="Next" Click="Next_Click"/>
+            <MenuItem Name="mitm_About" Header="About"/>
+        </Menu>
+        <ScrollViewer x:Name="sview" Margin="0,0,0,0" Width="860" Background="White">
+            <Grid x:Name="TOR_Printable_Front" Height="1970" Width="860" Background="White">
+                <Label x:Name="lbl_Name" Content="Pangalan" HorizontalAlignment="Left" Margin="23,234,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <Label x:Name="lbl_lName" Content="Apelyido, Unang Ngalan M.I." HorizontalAlignment="Left" Margin="82,250,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="tb_FullName" HorizontalAlignment="Left" Height="46" Margin="81,210,0,0" VerticalAlignment="Top" Width="200" BorderThickness="0,0,0,1" VerticalContentAlignment="Bottom" TextChanged="tb_FullName_TextChanged" TextWrapping="Wrap" IsReadOnly="True">
+                    <TextBox.Background>
+                        <ImageBrush/>
+                    </TextBox.Background>
+                </TextBox>
+                <Label x:Name="lbl_Name_Copy" Content="Sangay" HorizontalAlignment="Left" Margin="279,234,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <TextBox x:Name="tb_FullName_Copy" HorizontalAlignment="Left" Height="23" Margin="328,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="191"  VerticalContentAlignment="Bottom" BorderThickness="0,0,0,1">
+                    <TextBox.Background>
+                        <ImageBrush/>
+                    </TextBox.Background>
+                </TextBox>
+                <Label x:Name="lbl_lName_Copy" Content="(Division)" HorizontalAlignment="Left" Margin="327,249,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="lbl_Name_Copy1" Content="Paaralan" HorizontalAlignment="Left" Margin="519,235,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.021,0.731" FontWeight="Bold"/>
+                <TextBox x:Name="tb_FullName_Copy1" HorizontalAlignment="Left" Height="23" Margin="576,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="247" Text="J Zamora Elementary School" VerticalContentAlignment="Bottom" BorderThickness="0,0,0,1">
+                    <TextBox.Background>
+                        <ImageBrush/>
+                    </TextBox.Background>
+                </TextBox>
+                <Label x:Name="lbl_lName_Copy1" Content="(School)" HorizontalAlignment="Left" Margin="519,249,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="lbl_Name_Copy2" Content="Kasarian" HorizontalAlignment="Left" Margin="23,271,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <TextBox x:Name="tb_FullName_Copy2" HorizontalAlignment="Left" Height="23" Margin="82,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="45" VerticalContentAlignment="Bottom" BorderThickness="0,0,0,1" TextChanged="tb_FullName_Copy2_TextChanged">
+                    <TextBox.Background>
+                        <ImageBrush/>
+                    </TextBox.Background>
+                </TextBox>
+                <Label x:Name="lbl_lName_Copy2" Content="(Sex)" HorizontalAlignment="Left" Margin="23,287,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="lbl_Name_Copy3" Content="Petsa ng Kapanganakan" HorizontalAlignment="Left" Margin="129,272,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <TextBox x:Name="tb_FullName_Copy3" HorizontalAlignment="Left" Height="23" Margin="272,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="97" UndoLimit="80" VerticalContentAlignment="Bottom" BorderThickness="0,0,0,1">
+                    <TextBox.Background>
+                        <ImageBrush/>
+                    </TextBox.Background>
+                </TextBox>
+                <Label x:Name="lbl_lName_Copy3" Content="(Date of Birth)" HorizontalAlignment="Left" Margin="129,287,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="lbl_Name_Copy4" Content="Pook" HorizontalAlignment="Left" Margin="369,272,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <TextBox x:Name="tb_FullName_Copy4" HorizontalAlignment="Left" Height="23" Margin="406,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" VerticalContentAlignment="Bottom" BorderThickness="0,0,0,1">
+                    <TextBox.Background>
+                        <ImageBrush/>
+                    </TextBox.Background>
+                </TextBox>
+                <Label x:Name="lbl_lName_Copy4" Content="(Place) Bayan/Lalawigan/Lungsod" HorizontalAlignment="Left" Margin="369,288,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="lbl_Name_Copy5" Content="Pesta ng Pagpasok" HorizontalAlignment="Left" Margin="571,272,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <TextBox x:Name="tb_FullName_Copy5" HorizontalAlignment="Left" Height="23" Margin="686,269,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="137" VerticalContentAlignment="Bottom" BorderThickness="0,0,0,1">
+                    <TextBox.Background>
+                        <ImageBrush/>
+                    </TextBox.Background>
+                </TextBox>
+                <Label x:Name="lbl_lName_Copy5" Content="(Date of Entrance)" HorizontalAlignment="Left" Margin="571,287,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="lbl_Name_Copy6" Content="Magulang/Tagapag-alaga" HorizontalAlignment="Left" Margin="23,307,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <TextBox x:Name="tb_FullName_Copy6" HorizontalAlignment="Left" Height="23" Margin="176,304,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" VerticalContentAlignment="Bottom" BorderThickness="0,0,0,1">
+                    <TextBox.Background>
+                        <ImageBrush/>
+                    </TextBox.Background>
+                </TextBox>
+                <Label x:Name="lbl_lName_Copy6" Content="(Name) Pangalan" HorizontalAlignment="Left" Margin="171,321,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="tb_FullName_Copy7" HorizontalAlignment="Left" Height="23" Margin="338,304,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="316" VerticalContentAlignment="Bottom" BorderThickness="0,0,0,1">
+                    <TextBox.Background>
+                        <ImageBrush/>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox x:Name="tb_FullName_Copy8" HorizontalAlignment="Left" Height="23" Margin="659,304,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" VerticalContentAlignment="Bottom" BorderThickness="0,0,0,1">
+                    <TextBox.Background>
+                        <ImageBrush/>
+                    </TextBox.Background>
+                </TextBox>
+                <Label x:Name="lbl_lName_Copy7" Content="(Address) Tirahan" HorizontalAlignment="Left" Margin="334,321,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="lbl_lName_Copy8" Content="(Occupation) Hanapbuhay" HorizontalAlignment="Left" Margin="654,321,0,0" VerticalAlignment="Top"/>
+                <Label Content="Learning Areas" HorizontalAlignment="Left" BorderBrush="Black" BorderThickness="1" Height="56" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="175" Margin="17,483,0,0" VerticalContentAlignment="Center"/>
+                <Label Content="Periodic Rating" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="0,1" Width="120" HorizontalContentAlignment="Center" Margin="192,483,0,0"/>
+                <Label Content="Final Rating" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1" Height="56" HorizontalContentAlignment="Center" Margin="312,483,0,0" VerticalContentAlignment="Center"/>
+                <Label Content="1" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="0,0,1,1" Width="30" Height="28" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="192,511,0,0"/>
+                <Label Content="2" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="0,0,1,1" Width="30" Height="28" HorizontalContentAlignment="Center" Margin="222,511,0,0"/>
+                <Label Content="3" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="0,0,1,1" Width="30" Height="28" HorizontalContentAlignment="Center" Margin="252,511,0,0"/>
+                <Label Content="4" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="0,0,0,1" Width="30" Height="28" HorizontalContentAlignment="Center" Margin="282,511,0,0"/>
+                <Label Content="English" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="17,539,0,0"/>
+                <Label Content="Filipino" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="17,567,0,0"/>
+                <Label Content="Mathmathics" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="17,595,0,0"/>
+                <Label Content="Araling Panlipunan" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="17,623,0,0"/>
+                <Label Content="Edukasyon sa Pagpapakatao" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="17,651,0,0"/>
+                <Label Content="   MAPEH" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="17,679,0,0"/>
+                <Label Content="   Music" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="17,707,0,0"/>
+                <Label Content="   Art" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="17,735,0,0"/>
+                <Label Content="   P.E." HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="17,763,0,0"/>
+                <Label Content="   Health" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="17,791,0,0"/>
+                <Label Content="Mother Tongue" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="17,819,0,0"/>
+                <Label Content="Average" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" HorizontalContentAlignment="Right" Height="28" Margin="17,847,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="192,539,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="222,539,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="252,539,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="282,539,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="312,539,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="192,567,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="222,567,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="252,567,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="282,567,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="312,567,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="192,595,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="222,595,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="252,595,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="282,595,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="312,595,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="192,623,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="222,623,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="252,623,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="282,623,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="312,623,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="192,651,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="222,651,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="252,651,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="282,651,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="312,651,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="192,679,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="222,679,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="252,679,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="282,679,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="312,679,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="192,707,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="222,707,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="252,707,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="282,707,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="312,707,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="192,735,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="222,735,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="252,735,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="282,735,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="312,735,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="192,763,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="222,763,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="252,763,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="282,763,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="312,763,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="192,791,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="222,791,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="252,791,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="282,791,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="312,791,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="192,819,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="222,819,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="252,819,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="282,819,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="312,819,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="192,847,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="222,847,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="252,847,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="282,847,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="312,847,0,0"/>
+                <Label Content="School Year" HorizontalAlignment="Left" Margin="10,454,0,0" VerticalAlignment="Top"/>
+                <Label Content="Grade I - Section" HorizontalAlignment="Left" Margin="10,428,0,0" VerticalAlignment="Top"/>
+                <Label Content="I." HorizontalAlignment="Left" Margin="10,235,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <Label Content="DepEd Form 137 - E" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="14" Margin="0,1,0,0"/>
+                <Label Content="LRN" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="14" Margin="725,1,0,0"/>
+                <TextBox x:Name="tb_FullName_Copy9" HorizontalAlignment="Left" Height="23" Margin="760,-1,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" VerticalContentAlignment="Bottom" BorderThickness="0,0,0,1">
+                    <TextBox.Background>
+                        <ImageBrush/>
+                    </TextBox.Background>
+                </TextBox>
+                <Label Content="Republika ng Pilipinas" HorizontalAlignment="Center" Margin="348,20,348,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <Label Content="(Republic of the Philippines)" HorizontalAlignment="Center" Margin="330,35,330,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <Label Content="Kagawaran ng Edukasyon" HorizontalAlignment="Center" Margin="338,53,338,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <Label Content="(Department of Education)" HorizontalAlignment="Center" Margin="334,67,334,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <Label Content="KAWANIHAN NG EDUKASYONG ELEMENTARYA" HorizontalAlignment="Center" Margin="231,87,231,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+                <Label Content="(BUREAU OF ELEMENTARY EDUCATION)" HorizontalAlignment="Center" Margin="262,105,257,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+                <Label Content="National Capital Region" HorizontalAlignment="Center" Margin="343,123,343,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <Label Content="DIVISION OF CITY SCHOOLS" HorizontalAlignment="Center" Margin="317,136,317,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+                <Label Content="Manila" HorizontalAlignment="Center" Margin="391,154,391,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <Label Content="PALAGIANG TALAAN SA MABABANG PAARALAN" HorizontalAlignment="Center" Margin="224,167,224,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+                <Label Content="(ELEMENTARY SCHOOL PERMANENT RECORD)" HorizontalAlignment="Center" Margin="234,187,234,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+                <Label Content="II." HorizontalAlignment="Left" Margin="10,352,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <Label Content="PAG-UNLAD SA MABABANG PAARALAN" HorizontalAlignment="Center" Margin="256,352,258,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+                <Label Content="(ELEMENTARY SCHOOL PROGRESS)" HorizontalAlignment="Center" Margin="272,372,282,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+                <Label Content="School" HorizontalAlignment="Left" Margin="10,406,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="tb_FullName_Copy10" HorizontalAlignment="Left" Height="23" Margin="56,405,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="330" VerticalContentAlignment="Bottom" BorderThickness="0,0,0,1">
+                    <TextBox.Background>
+                        <ImageBrush/>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox x:Name="tb_FullName_Copy11" HorizontalAlignment="Left" Height="23" Margin="109,427,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="277" VerticalContentAlignment="Bottom" BorderThickness="0,0,0,1">
+                    <TextBox.Background>
+                        <ImageBrush/>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox x:Name="tb_FullName_Copy12" HorizontalAlignment="Left" Height="23" Margin="82,453,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" VerticalContentAlignment="Bottom" BorderThickness="0,0,0,1">
+                    <TextBox.Background>
+                        <ImageBrush/>
+                    </TextBox.Background>
+                </TextBox>
+                <Label Content="Learning Areas" HorizontalAlignment="Left" BorderBrush="Black" BorderThickness="1" Height="56" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="175" Margin="454,483,0,0" VerticalContentAlignment="Center"/>
+                <Label Content="Periodic Rating" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="0,1" Width="120" HorizontalContentAlignment="Center" Margin="629,483,0,0"/>
+                <Label Content="Final Rating" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1" Height="56" HorizontalContentAlignment="Center" Margin="749,483,0,0" VerticalContentAlignment="Center"/>
+                <Label Content="1" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="0,0,1,1" Width="30" Height="28" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="629,511,0,0"/>
+                <Label Content="2" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="0,0,1,1" Width="30" Height="28" HorizontalContentAlignment="Center" Margin="659,511,0,0"/>
+                <Label Content="3" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="0,0,1,1" Width="30" Height="28" HorizontalContentAlignment="Center" Margin="689,511,0,0"/>
+                <Label Content="4" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="0,0,0,1" Width="30" Height="28" HorizontalContentAlignment="Center" Margin="719,511,0,0"/>
+                <Label Content="English" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="454,539,0,0"/>
+                <Label Content="Filipino" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="454,567,0,0"/>
+                <Label Content="Mathmathics" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="454,595,0,0"/>
+                <Label Content="Araling Panlipunan" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="454,623,0,0"/>
+                <Label Content="Edukasyon sa Pagpapakatao" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="454,651,0,0"/>
+                <Label Content="   MAPEH" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="454,679,0,0"/>
+                <Label Content="   Music" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="454,707,0,0"/>
+                <Label Content="   Art" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="454,735,0,0"/>
+                <Label Content="   P.E." HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="454,763,0,0"/>
+                <Label Content="   Health" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="454,791,0,0"/>
+                <Label Content="Mother Tongue" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="454,819,0,0"/>
+                <Label Content="Average" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" HorizontalContentAlignment="Right" Height="28" Margin="454,847,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="629,539,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="659,539,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="689,539,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="719,539,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="749,539,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="629,567,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="659,567,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="689,567,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="719,567,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="749,567,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="629,595,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="659,595,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="689,595,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="719,595,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="749,595,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="629,623,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="659,623,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="689,623,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="719,623,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="749,623,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="629,651,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="659,651,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="689,651,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="719,651,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="749,651,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="629,679,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="659,679,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="689,679,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="719,679,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="749,679,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="629,707,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="659,707,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="689,707,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="719,707,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="749,707,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="629,735,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="659,735,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="689,735,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="719,735,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="749,735,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="629,763,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="659,763,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="689,763,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="719,763,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="749,763,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="629,791,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="659,791,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="689,791,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="719,791,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="749,791,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="629,819,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="659,819,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="689,819,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="719,819,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="749,819,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="629,847,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="659,847,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="689,847,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="719,847,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="749,847,0,0"/>
+                <Label Content="School Year" HorizontalAlignment="Left" Margin="447,454,0,0" VerticalAlignment="Top"/>
+                <Label Content="Grade II - Section" HorizontalAlignment="Left" Margin="447,428,0,0" VerticalAlignment="Top"/>
+                <Label Content="School" HorizontalAlignment="Left" Margin="447,406,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="tb_FullName_Copy13" HorizontalAlignment="Left" Height="23" Margin="493,405,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="330" VerticalContentAlignment="Bottom" BorderThickness="0,0,0,1">
+                    <TextBox.Background>
+                        <ImageBrush/>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox x:Name="tb_FullName_Copy14" HorizontalAlignment="Left" Height="23" Margin="549,427,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="274" VerticalContentAlignment="Bottom" BorderThickness="0,0,0,1">
+                    <TextBox.Background>
+                        <ImageBrush/>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox x:Name="tb_FullName_Copy15" HorizontalAlignment="Left" Height="23" Margin="519,453,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" VerticalContentAlignment="Bottom" BorderThickness="0,0,0,1">
+                    <TextBox.Background>
+                        <ImageBrush/>
+                    </TextBox.Background>
+                </TextBox>
+                <Label Content="Eligible for Admission to Grade" HorizontalAlignment="Left" Margin="10,876,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="tb_FullName_Copy16" HorizontalAlignment="Left" Height="23" Margin="184,875,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173" VerticalContentAlignment="Bottom" BorderThickness="0,0,0,1">
+                    <TextBox.Background>
+                        <ImageBrush/>
+                    </TextBox.Background>
+                </TextBox>
+                <Label Content="Eligible for Admission to Grade" HorizontalAlignment="Left" Margin="447,876,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="tb_FullName_Copy17" HorizontalAlignment="Left" Height="23" Margin="621,875,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173" VerticalContentAlignment="Bottom" BorderThickness="0,0,0,1">
+                    <TextBox.Background>
+                        <ImageBrush/>
+                    </TextBox.Background>
+                </TextBox>
+                <Label Content="Learning Areas" HorizontalAlignment="Left" BorderBrush="Black" BorderThickness="1" Height="56" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="175" Margin="17,988,0,0" VerticalContentAlignment="Center"/>
+                <Label Content="Periodic Rating" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="0,1" Width="120" HorizontalContentAlignment="Center" Margin="192,988,0,0"/>
+                <Label Content="Final Rating" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1" Height="56" HorizontalContentAlignment="Center" Margin="312,988,0,0" VerticalContentAlignment="Center"/>
+                <Label Content="1" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="0,0,1,1" Width="30" Height="28" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="192,1016,0,0"/>
+                <Label Content="2" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="0,0,1,1" Width="30" Height="28" HorizontalContentAlignment="Center" Margin="222,1016,0,0"/>
+                <Label Content="3" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="0,0,1,1" Width="30" Height="28" HorizontalContentAlignment="Center" Margin="252,1016,0,0"/>
+                <Label Content="4" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="0,0,0,1" Width="30" Height="28" HorizontalContentAlignment="Center" Margin="282,1016,0,0"/>
+                <Label Content="English" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="17,1044,0,0"/>
+                <Label Content="Filipino" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="17,1072,0,0"/>
+                <Label Content="Mathmathics" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="17,1100,0,0"/>
+                <Label Content="Araling Panlipunan" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="17,1128,0,0"/>
+                <Label Content="Edukasyon sa Pagpapakatao" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="17,1156,0,0"/>
+                <Label Content="   MAPEH" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="17,1184,0,0"/>
+                <Label Content="   Music" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="17,1212,0,0"/>
+                <Label Content="   Art" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="17,1240,0,0"/>
+                <Label Content="   P.E." HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="17,1268,0,0"/>
+                <Label Content="   Health" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="17,1296,0,0"/>
+                <Label Content="Mother Tongue" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="17,1324,0,0"/>
+                <Label Content="Average" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" HorizontalContentAlignment="Right" Height="28" Margin="17,1352,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="192,1044,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="222,1044,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="252,1044,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="282,1044,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="312,1044,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="192,1072,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="222,1072,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="252,1072,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="282,1072,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="312,1072,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="192,1100,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="222,1100,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="252,1100,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="282,1100,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="312,1100,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="192,1128,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="222,1128,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="252,1128,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="282,1128,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="312,1128,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="192,1156,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="222,1156,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="252,1156,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="282,1156,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="312,1156,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="192,1184,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="222,1184,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="252,1184,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="282,1184,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="312,1184,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="192,1212,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="222,1212,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="252,1212,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="282,1212,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="312,1212,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="192,1240,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="222,1240,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="252,1240,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="282,1240,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="312,1240,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="192,1268,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="222,1268,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="252,1268,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="282,1268,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="312,1268,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="192,1296,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="222,1296,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="252,1296,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="282,1296,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="312,1296,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="192,1324,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="222,1324,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="252,1324,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="282,1324,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="312,1324,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="192,1352,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="222,1352,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="252,1352,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="282,1352,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="312,1352,0,0"/>
+                <Label Content="School Year" HorizontalAlignment="Left" Margin="10,959,0,0" VerticalAlignment="Top"/>
+                <Label Content="Grade III - Section" HorizontalAlignment="Left" Margin="10,933,0,0" VerticalAlignment="Top"/>
+                <Label Content="School" HorizontalAlignment="Left" Margin="10,911,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="tb_FullName_Copy18" HorizontalAlignment="Left" Height="23" Margin="56,910,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="330" VerticalContentAlignment="Bottom" BorderThickness="0,0,0,1">
+                    <TextBox.Background>
+                        <ImageBrush/>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox x:Name="tb_FullName_Copy19" HorizontalAlignment="Left" Height="23" Margin="115,932,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="271" VerticalContentAlignment="Bottom" BorderThickness="0,0,0,1">
+                    <TextBox.Background>
+                        <ImageBrush/>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox x:Name="tb_FullName_Copy20" HorizontalAlignment="Left" Height="23" Margin="82,958,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" VerticalContentAlignment="Bottom" BorderThickness="0,0,0,1">
+                    <TextBox.Background>
+                        <ImageBrush/>
+                    </TextBox.Background>
+                </TextBox>
+                <Label Content="Learning Areas" HorizontalAlignment="Left" BorderBrush="Black" BorderThickness="1" Height="56" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="175" Margin="454,988,0,0" VerticalContentAlignment="Center"/>
+                <Label Content="Periodic Rating" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="0,1" Width="120" HorizontalContentAlignment="Center" Margin="629,988,0,0"/>
+                <Label Content="Final Rating" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1" Height="56" HorizontalContentAlignment="Center" Margin="749,988,0,0" VerticalContentAlignment="Center"/>
+                <Label Content="1" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="0,0,1,1" Width="30" Height="28" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="629,1016,0,0"/>
+                <Label Content="2" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="0,0,1,1" Width="30" Height="28" HorizontalContentAlignment="Center" Margin="659,1016,0,0"/>
+                <Label Content="3" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="0,0,1,1" Width="30" Height="28" HorizontalContentAlignment="Center" Margin="689,1016,0,0"/>
+                <Label Content="4" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="0,0,0,1" Width="30" Height="28" HorizontalContentAlignment="Center" Margin="719,1016,0,0"/>
+                <Label Content="English" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="454,1044,0,0"/>
+                <Label Content="Filipino" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="454,1072,0,0"/>
+                <Label Content="Mathmathics" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="454,1100,0,0"/>
+                <Label Content="Araling Panlipunan" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="454,1128,0,0"/>
+                <Label Content="Edukasyon sa Pagpapakatao" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="454,1156,0,0"/>
+                <Label Content="   MAPEH" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="454,1184,0,0"/>
+                <Label Content="   Music" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="454,1212,0,0"/>
+                <Label Content="   Art" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="454,1240,0,0"/>
+                <Label Content="   P.E." HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="454,1268,0,0"/>
+                <Label Content="   Health" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="454,1296,0,0"/>
+                <Label Content="Mother Tongue" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="454,1324,0,0"/>
+                <Label Content="Average" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" HorizontalContentAlignment="Right" Height="28" Margin="454,1352,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="629,1044,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="659,1044,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="689,1044,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="719,1044,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="749,1044,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="629,1072,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="659,1072,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="689,1072,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="719,1072,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="749,1072,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="629,1100,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="659,1100,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="689,1100,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="719,1100,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="749,1100,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="629,1128,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="659,1128,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="689,1128,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="719,1128,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="749,1128,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="629,1156,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="659,1156,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="689,1156,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="719,1156,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="749,1156,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="629,1184,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="659,1184,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="689,1184,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="719,1184,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="749,1184,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="629,1212,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="659,1212,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="689,1212,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="719,1212,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="749,1212,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="629,1240,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="659,1240,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="689,1240,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="719,1240,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="749,1240,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="629,1268,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="659,1268,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="689,1268,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="719,1268,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="749,1268,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="629,1296,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="659,1296,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="689,1296,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="719,1296,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="749,1296,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="629,1324,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="659,1324,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="689,1324,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="719,1324,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="749,1324,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="629,1352,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="659,1352,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="689,1352,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="719,1352,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="749,1352,0,0"/>
+                <Label Content="School Year" HorizontalAlignment="Left" Margin="447,959,0,0" VerticalAlignment="Top"/>
+                <Label Content="Grade IV - Section" HorizontalAlignment="Left" Margin="447,933,0,0" VerticalAlignment="Top"/>
+                <Label Content="School" HorizontalAlignment="Left" Margin="447,911,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="tb_FullName_Copy21" HorizontalAlignment="Left" Height="23" Margin="493,910,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="330" VerticalContentAlignment="Bottom" BorderThickness="0,0,0,1">
+                    <TextBox.Background>
+                        <ImageBrush/>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox x:Name="tb_FullName_Copy22" HorizontalAlignment="Left" Height="23" Margin="553,932,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="270" VerticalContentAlignment="Bottom" BorderThickness="0,0,0,1">
+                    <TextBox.Background>
+                        <ImageBrush/>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox x:Name="tb_FullName_Copy23" HorizontalAlignment="Left" Height="23" Margin="519,958,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" VerticalContentAlignment="Bottom" BorderThickness="0,0,0,1">
+                    <TextBox.Background>
+                        <ImageBrush/>
+                    </TextBox.Background>
+                </TextBox>
+                <Label Content="Eligible for Admission to Grade" HorizontalAlignment="Left" Margin="10,1381,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="tb_FullName_Copy24" HorizontalAlignment="Left" Height="23" Margin="184,1380,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173" VerticalContentAlignment="Bottom" BorderThickness="0,0,0,1">
+                    <TextBox.Background>
+                        <ImageBrush/>
+                    </TextBox.Background>
+                </TextBox>
+                <Label Content="Eligible for Admission to Grade" HorizontalAlignment="Left" Margin="447,1381,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="tb_FullName_Copy25" HorizontalAlignment="Left" Height="23" Margin="621,1380,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173" VerticalContentAlignment="Bottom" BorderThickness="0,0,0,1">
+                    <TextBox.Background>
+                        <ImageBrush/>
+                    </TextBox.Background>
+                </TextBox>
+                <Label Content="Learning Areas" HorizontalAlignment="Left" BorderBrush="Black" BorderThickness="1" Height="56" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="175" Margin="17,1493,0,-17" VerticalContentAlignment="Center"/>
+                <Label Content="Periodic Rating" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="0,1" Width="120" HorizontalContentAlignment="Center" Margin="192,1493,0,0"/>
+                <Label Content="Final Rating" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1" Height="56" HorizontalContentAlignment="Center" Margin="312,1493,0,-17" VerticalContentAlignment="Center"/>
+                <Label Content="1" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="0,0,1,1" Width="30" Height="28" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="192,1521,0,-17"/>
+                <Label Content="2" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="0,0,1,1" Width="30" Height="28" HorizontalContentAlignment="Center" Margin="222,1521,0,-17"/>
+                <Label Content="3" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="0,0,1,1" Width="30" Height="28" HorizontalContentAlignment="Center" Margin="252,1521,0,-17"/>
+                <Label Content="4" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="0,0,0,1" Width="30" Height="28" HorizontalContentAlignment="Center" Margin="282,1521,0,-17"/>
+                <Label Content="English" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="17,1549,0,-45"/>
+                <Label Content="Filipino" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="17,1577,0,-73"/>
+                <Label Content="Mathmathics" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="17,1605,0,-101"/>
+                <Label Content="Araling Panlipunan" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="17,1633,0,-129"/>
+                <Label Content="Edukasyon sa Pagpapakatao" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="17,1661,0,-157"/>
+                <Label Content="   MAPEH" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="17,1689,0,-185"/>
+                <Label Content="   Music" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="17,1717,0,-213"/>
+                <Label Content="   Art" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="17,1745,0,-241"/>
+                <Label Content="   P.E." HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="17,1773,0,-269"/>
+                <Label Content="   Health" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="17,1801,0,-297"/>
+                <Label Content="Mother Tongue" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="17,1829,0,-325"/>
+                <Label Content="Average" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" HorizontalContentAlignment="Right" Height="28" Margin="17,1857,0,-353"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="192,1549,0,-45"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="222,1549,0,-45"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="252,1549,0,-45"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="282,1549,0,-45"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="312,1549,0,-45"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="192,1577,0,-73"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="222,1577,0,-73"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="252,1577,0,-73"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="282,1577,0,-73"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="312,1577,0,-73"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="192,1605,0,-101"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="222,1605,0,-101"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="252,1605,0,-101"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="282,1605,0,-101"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="312,1605,0,-101"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="192,1633,0,-129"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="222,1633,0,-129"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="252,1633,0,-129"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="282,1633,0,-129"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="312,1633,0,-129"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="192,1661,0,-157"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="222,1661,0,-157"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="252,1661,0,-157"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="282,1661,0,-157"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="312,1661,0,-157"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="192,1689,0,-185"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="222,1689,0,-185"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="252,1689,0,-185"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="282,1689,0,-185"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="312,1689,0,-185"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="192,1717,0,-213"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="222,1717,0,-213"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="252,1717,0,-213"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="282,1717,0,-213"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="312,1717,0,-213"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="192,1745,0,-241"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="222,1745,0,-241"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="252,1745,0,-241"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="282,1745,0,-241"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="312,1745,0,-241"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="192,1773,0,-269"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="222,1773,0,-269"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="252,1773,0,-269"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="282,1773,0,-269"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="312,1773,0,-269"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="192,1801,0,-297"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="222,1801,0,-297"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="252,1801,0,-297"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="282,1801,0,-297"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="312,1801,0,-297"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="192,1829,0,-325"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="222,1829,0,-325"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="252,1829,0,-325"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="282,1829,0,-325"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="312,1829,0,-325"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="192,1857,0,-353"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="222,1857,0,-353"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="252,1857,0,-353"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="282,1857,0,-353"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="312,1857,0,-353"/>
+                <Label Content="School Year" HorizontalAlignment="Left" Margin="10,1464,0,0" VerticalAlignment="Top"/>
+                <Label Content="Grade V - Section" HorizontalAlignment="Left" Margin="10,1438,0,0" VerticalAlignment="Top"/>
+                <Label Content="School" HorizontalAlignment="Left" Margin="10,1416,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="tb_FullName_Copy26" HorizontalAlignment="Left" Height="23" Margin="56,1415,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="330" VerticalContentAlignment="Bottom" BorderThickness="0,0,0,1">
+                    <TextBox.Background>
+                        <ImageBrush/>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox x:Name="tb_FullName_Copy27" HorizontalAlignment="Left" Height="23" Margin="115,1437,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="271" VerticalContentAlignment="Bottom" BorderThickness="0,0,0,1">
+                    <TextBox.Background>
+                        <ImageBrush/>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox x:Name="tb_FullName_Copy28" HorizontalAlignment="Left" Height="23" Margin="82,1463,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" VerticalContentAlignment="Bottom" BorderThickness="0,0,0,1">
+                    <TextBox.Background>
+                        <ImageBrush/>
+                    </TextBox.Background>
+                </TextBox>
+                <Label Content="Learning Areas" HorizontalAlignment="Left" BorderBrush="Black" BorderThickness="1" Height="56" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="175" Margin="454,1493,0,-17" VerticalContentAlignment="Center"/>
+                <Label Content="Periodic Rating" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="0,1" Width="120" HorizontalContentAlignment="Center" Margin="629,1493,0,0"/>
+                <Label Content="Final Rating" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1" Height="56" HorizontalContentAlignment="Center" Margin="749,1493,0,-17" VerticalContentAlignment="Center"/>
+                <Label Content="1" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="0,0,1,1" Width="30" Height="28" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="629,1521,0,-17"/>
+                <Label Content="2" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="0,0,1,1" Width="30" Height="28" HorizontalContentAlignment="Center" Margin="659,1521,0,-17"/>
+                <Label Content="3" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="0,0,1,1" Width="30" Height="28" HorizontalContentAlignment="Center" Margin="689,1521,0,-17"/>
+                <Label Content="4" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="0,0,0,1" Width="30" Height="28" HorizontalContentAlignment="Center" Margin="719,1521,0,-17"/>
+                <Label Content="English" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="454,1549,0,-45"/>
+                <Label Content="Filipino" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="454,1577,0,-73"/>
+                <Label Content="Mathmathics" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="454,1605,0,-101"/>
+                <Label Content="Araling Panlipunan" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="454,1633,0,-129"/>
+                <Label Content="Edukasyon sa Pagpapakatao" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="454,1661,0,-157"/>
+                <Label Content="   MAPEH" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="454,1689,0,-185"/>
+                <Label Content="   Music" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="454,1717,0,-213"/>
+                <Label Content="   Art" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="454,1745,0,-241"/>
+                <Label Content="   P.E." HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="454,1773,0,-269"/>
+                <Label Content="   Health" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="454,1801,0,-297"/>
+                <Label Content="Mother Tongue" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" Height="28" Margin="454,1829,0,-325"/>
+                <Label Content="Average" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1,0,1,1" Width="175" HorizontalContentAlignment="Right" Height="28" Margin="454,1857,0,-353"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="629,1549,0,-45"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="659,1549,0,-45"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="689,1549,0,-45"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="719,1549,0,-45"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="749,1549,0,-45"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="629,1577,0,-73"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="659,1577,0,-73"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="689,1577,0,-73"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="719,1577,0,-73"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="749,1577,0,-73"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="629,1605,0,-101"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="659,1605,0,-101"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="689,1605,0,-101"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="719,1605,0,-101"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="749,1605,0,-101"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="629,1633,0,-129"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="659,1633,0,-129"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="689,1633,0,-129"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="719,1633,0,-129"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="749,1633,0,-129"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="629,1661,0,-157"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="659,1661,0,-157"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="689,1661,0,-157"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="719,1661,0,-157"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="749,1661,0,-157"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="629,1689,0,-185"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="659,1689,0,-185"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="689,1689,0,-185"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="719,1689,0,-185"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="749,1689,0,-185"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="629,1717,0,-213"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="659,1717,0,-213"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="689,1717,0,-213"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="719,1717,0,-213"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="749,1717,0,-213"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="629,1745,0,-241"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="659,1745,0,-241"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="689,1745,0,-241"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="719,1745,0,-241"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="749,1745,0,-241"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="629,1773,0,-269"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="659,1773,0,-269"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="689,1773,0,-269"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="719,1773,0,-269"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="749,1773,0,-269"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="629,1801,0,-297"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="659,1801,0,-297"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="689,1801,0,-297"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="719,1801,0,-297"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="749,1801,0,-297"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="629,1829,0,-325"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="659,1829,0,-325"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="689,1829,0,-325"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="719,1829,0,-325"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="749,1829,0,-325"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="629,1857,0,-353"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="659,1857,0,-353"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="689,1857,0,-353"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="719,1857,0,-353"/>
+                <TextBox HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="749,1857,0,-353"/>
+                <Label Content="School Year" HorizontalAlignment="Left" Margin="447,1464,0,0" VerticalAlignment="Top"/>
+                <Label Content="Grade VI - Section" HorizontalAlignment="Left" Margin="447,1438,0,0" VerticalAlignment="Top"/>
+                <Label Content="School" HorizontalAlignment="Left" Margin="447,1416,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="tb_FullName_Copy29" HorizontalAlignment="Left" Height="23" Margin="493,1415,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="330" VerticalContentAlignment="Bottom" BorderThickness="0,0,0,1">
+                    <TextBox.Background>
+                        <ImageBrush/>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox x:Name="tb_FullName_Copy30" HorizontalAlignment="Left" Height="23" Margin="553,1437,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="270" VerticalContentAlignment="Bottom" BorderThickness="0,0,0,1">
+                    <TextBox.Background>
+                        <ImageBrush/>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox x:Name="tb_FullName_Copy31" HorizontalAlignment="Left" Height="23" Margin="519,1463,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" VerticalContentAlignment="Bottom" BorderThickness="0,0,0,1">
+                    <TextBox.Background>
+                        <ImageBrush/>
+                    </TextBox.Background>
+                </TextBox>
+                <Label Content="Eligible for Admission to Grade" HorizontalAlignment="Left" Margin="10,1886,0,-380" VerticalAlignment="Top"/>
+                <TextBox x:Name="tb_FullName_Copy32" HorizontalAlignment="Left" Height="23" Margin="184,1885,0,-376" TextWrapping="Wrap" VerticalAlignment="Top" Width="173" VerticalContentAlignment="Bottom" BorderThickness="0,0,0,1">
+                    <TextBox.Background>
+                        <ImageBrush/>
+                    </TextBox.Background>
+                </TextBox>
+                <Label Content="Eligible for Admission to Grade" HorizontalAlignment="Left" Margin="447,1886,0,-380" VerticalAlignment="Top"/>
+                <TextBox x:Name="tb_FullName_Copy33" HorizontalAlignment="Left" Height="23" Margin="621,1885,0,-376" TextWrapping="Wrap" VerticalAlignment="Top" Width="173" VerticalContentAlignment="Bottom" BorderThickness="0,0,0,1">
+                    <TextBox.Background>
+                        <ImageBrush/>
+                    </TextBox.Background>
+                </TextBox>
+                
+
+            </Grid>
+
+        </ScrollViewer>
+    </DockPanel>
+</Page>
